@@ -15,7 +15,8 @@ Educational institutes generate vast amounts of data each year, including academ
 ### Deployment
 ### Pipelines used(optional)
 ### Database description
-### UI/UX Designing tools ( Figma/draw.io/Excalidraw/mindmap etc)
+### UI/UX Designing tools
+Figma/draw.io/Excalidraw/mindmap etc.
 ### Cloud(AWS) optional
 ### Libraries used 
 ### AI-ML Tech used description
@@ -27,13 +28,16 @@ Educational institutes generate vast amounts of data each year, including academ
 
 ## 3. Installation instructions
 
-## 4. Configuration(all the details on configuration options,environment variables and how to set them)
+## 4. Configuration
+All the details on configuration options,environment variables and how to set them.
 
-## 5. API Documentation ( Details on any API used and Endpoints, request/response formats, and example calls)
+## 5. API Documentation 
+Details on any API used and Endpoints, request/response formats, and example calls.
 
 ## 6. Snippets of website 
 
-## 7. Live-Link ( when deployed on vercel/netlify)
+## 7. Live-Link 
+When deployed on vercel/netlify or whatever static site deployment we use.
 
 ## 8. Use-Cases
 
