@@ -13,10 +13,41 @@ Educational institutes generate vast amounts of data each year, including academ
 ### Front-End
 ### Back-End
 ### Deployment
+### Pipelines used(optional)
+### Database description
+### UI/UX Designing tools ( Figma/draw.io/Excalidraw/mindmap etc)
 ### Cloud(AWS) optional
 ### Libraries used 
 ### AI-ML Tech used description
+### Flow of website image
+
 
 
 ## Features 
+
+## Installation instructions
+
+## Configuration(all the details on configuration options,environment variables and how to set them)
+
+## API Documentation ( Details on any API used and Endpoints, request/response formats, and example calls)
+
+## Snippets of website 
+
+## Live-Link ( when deployed on vercel/netlify)
+
+## Use-Cases
+
+## Deployment
+Details on hosting services, deployment commands, and configuration.
+
+## License
+Any legal information regarding the use and distribution of the project.
+
+## Contributors 
+Github links of you all to be put in here and some contact info.
+
+## Contributing (optional)
+Guidelines for contributing to the project.
+
+
 
