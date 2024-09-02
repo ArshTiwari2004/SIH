@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
-import Login from "./pages/Login";
+import Login from "./components/Login";
 import About from "./components/About";
 import Signup from "./components/Signup";
 

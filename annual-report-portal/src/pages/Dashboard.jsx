@@ -13,7 +13,7 @@ const Dashboard = () => {
 
        {/* Get Started Button */}
         <Link 
-       to="/get-started" 
+       to="/signup" 
         className="bg-red-600 text-white py-2 px-4 rounded inline-block"
          >
          Get Started &gt;
