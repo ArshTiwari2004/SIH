@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import Login from "./pages/Login";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
           </Routes>
         </main>
+        <About />
         <Footer />
       </div>
     </Router>

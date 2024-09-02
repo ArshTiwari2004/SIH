@@ -1,31 +1,34 @@
-// Dashboard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { Bar } from 'react-chartjs-2';
-import '../utils/chartConfig'; 
+import '../utils/chartConfig'; // Adjust the path according to your project structure
 
 const Dashboard = () => {
-  const data = {
-    labels: ['Academic', 'Research', 'Financial', 'Infrastructure'],
-    datasets: [
-      {
-        label: 'Metrics',
-        backgroundColor: 'rgba(75,192,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
-        borderWidth: 2,
-        data: [65, 59, 80, 81],
-      },
-    ],
-  };
-
   return (
-    <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">Welcome to the Annual Report Portal</h2>
-      <p className="mb-8">This portal helps streamline the process of generating annual reports for educational institutes.</p>
-      <div className="mb-8">
-        <Bar data={data} />
+    <div className="container mx-auto p-6 flex flex-col lg:flex-row items-center">
+      {/* Left side content */}
+      <div className="lg:w-1/2 text-left">
+        <h2 className="text-4xl font-semibold mb-4">Transforming Data into a Comprehensive, Insightful Annual Report</h2>
+        <p className="text-lg mb-8">Welcome to InsightEDU, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.</p>
+
+       {/* Get Started Button */}
+        <Link 
+       to="/get-started" 
+        className="bg-red-600 text-white py-2 px-4 rounded inline-block"
+         >
+         Get Started &gt;
+           </Link>
+</div>
+
+      <div className="lg:w-1/2 mt-8 lg:mt-0 lg:ml-8 flex justify-center">
+         <img 
+         src="/reportgif.gif" 
+         alt="Investment Animation"
+          className="w-full h-auto max-w-md"
+        />
       </div>
-      <Link to="/reports" className="bg-blue-600 text-white py-2 px-4 rounded">View Reports</Link>
+
+
     </div>
   );
 };
