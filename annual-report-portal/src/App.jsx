@@ -6,23 +6,33 @@ import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import Login from "./pages/Login";
 import About from "./components/About";
+import Signup from "./components/Signup";
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16 pb-8"> {/* Added padding for header and footer */}
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </main>
-        <About />
         <Footer />
       </div>
     </Router>
+  );
+};
+
+const LandingPage = () => {
+  return (
+    <div className="flex flex-col">
+      <Dashboard />
+      <About />
+    </div>
   );
 };
 
