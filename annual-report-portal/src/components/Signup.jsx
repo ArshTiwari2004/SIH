@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ const Signup = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,17 @@ const Signup = () => {
       console.log('Form Data:', formData);
       setSuccess('Successfully signed up!');
       setError('');
+
+      // Redirect based on role
+      if (formData.role === 'Super-Admin') {
+        navigate('/super-admin-info');
+      } else if (formData.role === 'Admin') {
+        navigate('/admin-info');
+      }else if(formData.role === 'Student'){
+        navigate('/student-info');
+      }else if(formData.role === 'Faculty'){
+
+      }
     }
   };
 
@@ -68,9 +80,10 @@ const Signup = () => {
               required
             >
               <option value="">Please select user role</option>
-              <option value="student">Super-Admin</option>
-              <option value="faculty">Admin</option>
-              <option value="admin">Student</option>
+              <option value="Super-Admin">Super-Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Student">Student</option>
+              <option value="Faculty">Faculty</option>
             </select>
           </div>
           <button
