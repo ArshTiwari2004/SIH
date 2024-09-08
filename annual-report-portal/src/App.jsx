@@ -1,3 +1,4 @@
+import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -8,6 +9,7 @@ import Login from "./components/Login";
 import About from "./components/About";
 import Signup from "./components/Signup";
 import Superadmin from "./components/Superadmin";
+import Work from "./components/Work";
 
 const App = () => {
   return (
@@ -23,6 +25,7 @@ const App = () => {
             <Route path="/superadmin" element={<Superadmin />} />
           </Routes>
         </main>
+        <Home/>
         <Footer />
       </div>
     </Router>
