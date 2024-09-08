@@ -43,7 +43,7 @@ const Signup = () => {
         navigate('/admin-info');
       }else if(formData.role === 'Student'){
         navigate('/student-info');
-      }else if(formData.role === 'Faculty'){
+      }else if(formData.role === 'Faculty'){navigate("/faculty-info")}
 
 
       // Random check for email and password validation (will replace this with actual authentication logic)
