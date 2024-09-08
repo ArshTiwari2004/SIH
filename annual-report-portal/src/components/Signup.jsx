@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+
 import { Link,useNavigate } from 'react-router-dom';
+
+
+
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +14,11 @@ const Signup = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const navigate = useNavigate()
+
+  
+
+  const navigate = useNavigate(); // To handle navigation
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +31,7 @@ const Signup = () => {
       setError('Please select a user role.');
       setSuccess('');
     } else {
+
       console.log('Form Data:', formData);
       setSuccess('Successfully signed up!');
       setError('');
@@ -35,7 +45,9 @@ const Signup = () => {
         navigate('/student-info');
       }else if(formData.role === 'Faculty'){
 
-      }
+
+      // Random check for email and password validation (will replace this with actual authentication logic)
+      
     }
   };
 
@@ -104,9 +116,10 @@ const Signup = () => {
         <img
           src="/inscription.png"
           alt="Signup Illustration"
-          className="w-full h-auto" // Ensure image scales properly
+          className="w-full h-auto"
         />
       </div>
+
     </div>
   );
 };
