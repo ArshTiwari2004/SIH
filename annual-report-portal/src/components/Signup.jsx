@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
+import { Link,useNavigate } from 'react-router-dom';
+
+
+
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +14,11 @@ const Signup = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  
+
   const navigate = useNavigate(); // To handle navigation
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,16 +31,23 @@ const Signup = () => {
       setError('Please select a user role.');
       setSuccess('');
     } else {
+
+      console.log('Form Data:', formData);
+      setSuccess('Successfully signed up!');
+      setError('');
+
+      // Redirect based on role
+      if (formData.role === 'Super-Admin') {
+        navigate('/super-admin-info');
+      } else if (formData.role === 'Admin') {
+        navigate('/admin-info');
+      }else if(formData.role === 'Student'){
+        navigate('/student-info');
+      }else if(formData.role === 'Faculty'){
+
+
       // Random check for email and password validation (will replace this with actual authentication logic)
-      if (formData.email === 'admin@example.com' && formData.password === 'password123') {
-        if (formData.role === 'student') {
-          navigate('/superadmin'); // Redirect to Superadmin page
-        } else {
-          setError('Invalid role selected.');
-        }
-      } else {
-        setError('Invalid email or password.');
-      }
+      
     }
   };
 
@@ -77,9 +92,10 @@ const Signup = () => {
               required
             >
               <option value="">Please select user role</option>
-              <option value="student">Super-Admin</option>
-              <option value="faculty">Admin</option>
-              <option value="admin">Student</option>
+              <option value="Super-Admin">Super-Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Student">Student</option>
+              <option value="Faculty">Faculty</option>
             </select>
           </div>
           <button
