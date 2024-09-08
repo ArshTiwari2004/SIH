@@ -8,7 +8,7 @@ import Reports from "./pages/Reports";
 import Login from "./components/Login";
 import About from "./components/About";
 import Signup from "./components/Signup";
-import Superadmin from "./components/Superadmin";
+import SuperAdminUpload from "./components/Super";
 import Work from "./components/Work";
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
             <Route path="/reports" element={<Reports />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/superadmin" element={<Superadmin />} />
+            <Route path="/super" element={<SuperAdminUpload />} />
           </Routes>
         </main>
         <Home/>
