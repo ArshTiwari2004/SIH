@@ -25,7 +25,8 @@ const App = () => {
             <Route path="/super" element={<SuperAdminUpload />} />
           </Routes>
         </main>
-        <Home/>
+        {/* <Home/> */}
+        <Work/>
         <Footer />
       </div>
     </Router>
