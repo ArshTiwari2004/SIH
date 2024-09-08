@@ -1,9 +1,10 @@
 import { User } from "../models/userModel.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import {sendCookie} from "../utils/sendCookie.js"
 
 export const registerUser = async (req, res) => {
-    const { username, email, password, role, institution, collegeName, universityName, department, designation, contactNumber, address, additionalInfo } = req.body;
+    const { email, password,role } = req.body;
 
     try {
         const existingUser = await User.findOne({ email });
@@ -15,18 +16,9 @@ export const registerUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password,10);
 
         const newUser = new User({
-            username,
             email,
             password: hashedPassword,
             role,
-            institution,
-            collegeName,
-            universityName,
-            department,
-            designation,
-            contactNumber,
-            address,
-            additionalInfo
         });
 
         await newUser.save();
@@ -40,6 +32,7 @@ export const registerUser = async (req, res) => {
             user:{
                 id:newUser._id,
                 username:newUser.username,
+                role: newUser.role
             }
          })
     } catch (error) {
@@ -47,33 +40,63 @@ export const registerUser = async (req, res) => {
     }
 };
 
-export const loginUser = async (req, res) => {
-    const { email, password } = req.body;
+
+// improved login api
+export const loginUser = async (req, res, next) => {
+    const { email, password, role } = req.body;
+
     try {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email, role });
+
         if (!user) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+            return res.status(404).json({
+                success: false,
+                message: 'Invalid email/password/role'
+            });
         }
+
         const isMatch = await bcrypt.compare(password, user.password);
+
         if (!isMatch) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+            return res.status(404).json({
+                success: false,
+                message: 'Invalid email/password or role'
+            });
         }
-        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
-            expiresIn: '1h'
-        });
-        res.status(200).json({
-            token,
-            user: {
-              id: user._id,
-              username: user.username,
-              email: user.email,
-              role: user.role
-            }
-          });
+
+        sendCookie(user, res, 'Login Successful', 200);
     } catch (error) {
-        res.status(500).json({ message: 'Server error', error });
+        next(error); // Forward the error to the error handling middleware
     }
 }
+
+// export const loginUser = async (req, res) => { // previous login api that i made 
+//     const { email, password } = req.body;
+//     try {
+//         const user = await User.findOne({ email });
+//         if (!user) {
+//             return res.status(400).json({ message: 'Invalid email or password' });
+//         }
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//             return res.status(400).json({ message: 'Invalid email or password' });
+//         }
+//         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
+//             expiresIn: '1h'
+//         });
+//         res.status(200).json({
+//             token,
+//             user: {
+//               id: user._id,
+//               username: user.username,
+//               email: user.email,
+//               role: user.role
+//             }
+//           });
+//     } catch (error) {
+//         res.status(500).json({ message: 'Server error', error });
+//     }
+// }
 
 
 // Logout API

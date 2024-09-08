@@ -45,7 +45,8 @@ const Login = () => {
             withCredentials: true,
         }
     )
-    toast.success(data.message);
+    toast.success("Login Successful ! ");
+    localStorage.setItem('token',data.token);
     navigate("/reports")
     } catch (error) {
       console.log(error);
