@@ -23,10 +23,10 @@ const Signup = () => {
       setError('Please select a user role.');
       setSuccess('');
     } else {
-      // Random check for email and password validation (will replace this with actual authentication logic)
+      // Random check for email and passwadmin@example.comord validation (will replace this with actual authentication logic)
       if (formData.email === 'admin@example.com' && formData.password === 'password123') {
         if (formData.role === 'student') {
-          navigate('/superadmin'); // Redirect to Superadmin page
+          navigate('/super'); // Redirect to Superadmin page
         } else {
           setError('Invalid role selected.');
         }

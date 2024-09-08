@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
 import { CloudUploadIcon } from '@heroicons/react/outline';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const SuperAdminUpload = () => {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: [
@@ -32,7 +34,7 @@ const SuperAdminUpload = () => {
     });
 
     try {
-      //  POST request to the backend to handle file upload
+      // POST request to the backend to handle file upload
       await axios.post('/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -46,6 +48,10 @@ const SuperAdminUpload = () => {
       setLoading(false);
       setFiles([]);
     }
+  };
+
+  const handleViewDashboard = () => {
+    navigate('/dashboard'); // Redirect to the dashboard
   };
 
   return (
@@ -73,13 +79,19 @@ const SuperAdminUpload = () => {
           ))}
         </ul>
 
-        <div className="mt-6">
+        <div className="mt-6 flex space-x-4">
           <button
             className={`px-4 py-2 rounded-md text-center text-white ${loading ? 'bg-gray-400' : 'bg-blue-500 hover:bg-blue-600'}`}
             onClick={handleUpload}
             disabled={loading}
           >
             {loading ? 'Uploading...' : 'Upload Files'}
+          </button>
+          <button
+            className="px-4 py-2 rounded-md text-center text-white bg-green-500 hover:bg-green-600"
+            onClick={handleViewDashboard}
+          >
+            View Dashboard
           </button>
         </div>
       </div>
