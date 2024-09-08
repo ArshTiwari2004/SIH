@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Bar } from 'react-chartjs-2';
-import '../utils/chartConfig'; // Adjust the path according to your project structure
+import '../utils/chartConfig'; 
 
 const Dashboard = () => {
   return (
@@ -11,7 +11,6 @@ const Dashboard = () => {
         <h2 className="text-4xl font-semibold mb-4">Transforming Data into a Comprehensive, Insightful Annual Report</h2>
         <p className="text-lg mb-8">Welcome to InsightEDU, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.</p>
 
-       {/* Get Started Button */}
         <Link 
        to="/signup" 
         className="bg-red-600 text-white py-2 px-4 rounded inline-block"
