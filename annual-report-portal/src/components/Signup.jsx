@@ -1,10 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-
+import toast from 'react-hot-toast';
 import { Link,useNavigate } from 'react-router-dom';
-
-
-
-
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -25,12 +22,34 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     if (!formData.role) {
       setError('Please select a user role.');
       setSuccess('');
     } else {
+
+      try {
+        const { email, password,role } = formData;
+        const { data } = await axios.post(
+          "/api/v1/register",
+          {
+              email,
+              password,
+              role
+          },
+          {
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              withCredentials: true,
+          }
+      )
+      toast.success(`You Registered as ${role}`);
+      } catch (error) {
+        console.log(error);
+        toast.error("Something went wrong !")
+      }
 
       console.log('Form Data:', formData);
       setSuccess('Successfully signed up!');
