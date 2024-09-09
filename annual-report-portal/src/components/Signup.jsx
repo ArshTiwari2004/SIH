@@ -9,8 +9,7 @@ const Signup = () => {
     role: ''
   });
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const navigate = useNavigate(); // To handle navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,20 +18,31 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.role) {
+    const { email, password, role } = formData;
+
+    if (!role) {
       setError('Please select a user role.');
-      setSuccess('');
-    } else {
-      // Random check for email and passwadmin@example.comord validation (will replace this with actual authentication logic)
-      if (formData.email === 'admin@example.com' && formData.password === 'password123') {
-        if (formData.role === 'student') {
-          navigate('/super'); // Redirect to Superadmin page
-        } else {
+      return;
+    }
+
+    // Example validation logic for email and password
+    if (email === 'admin@example.com' && password === 'password123') {
+      switch (role) {
+        case 'superadmin':
+          navigate('/super'); // Redirect to Super.jsx
+          break;
+        case 'admin':
+          navigate('/adminpage'); // Redirect to Adminpage.jsx
+          break;
+        case 'student':
+          navigate('/studentpage'); // Redirect to Studentpage.jsx
+          break;
+        default:
           setError('Invalid role selected.');
-        }
-      } else {
-        setError('Invalid email or password.');
+          break;
       }
+    } else {
+      setError('Invalid email or password.');
     }
   };
 
@@ -41,7 +51,6 @@ const Signup = () => {
       <div className="w-full md:w-1/2 max-w-lg p-8 bg-white shadow-md rounded-md">
         <h2 className="text-2xl text-center font-bold mb-4">Sign Up</h2>
         {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-500">{success}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Email</label>
@@ -77,9 +86,9 @@ const Signup = () => {
               required
             >
               <option value="">Please select user role</option>
-              <option value="student">Super-Admin</option>
-              <option value="faculty">Admin</option>
-              <option value="admin">Student</option>
+              <option value="superadmin">Super-Admin</option>
+              <option value="admin">Admin</option>
+              <option value="student">Student</option>
             </select>
           </div>
           <button
@@ -103,7 +112,6 @@ const Signup = () => {
           className="w-full h-auto"
         />
       </div>
-
     </div>
   );
 };
