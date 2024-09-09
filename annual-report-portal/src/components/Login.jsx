@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -15,7 +19,7 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     if (!formData.role) {
       setError('Please select a user role.');
@@ -25,6 +29,28 @@ const Login = () => {
       // Simulate login success and role handling
       setSuccess('Successfully logged in!');
       setError('');
+    }
+    try {
+      const { email, password } = formData;
+      const { data } = await axios.post(
+        "/api/v1/login",
+        {
+            email,
+            password,
+        },
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            withCredentials: true,
+        }
+    )
+    toast.success("Login Successful ! ");
+    localStorage.setItem('token',data.token);
+    navigate("/reports")
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message)
     }
   };
 
