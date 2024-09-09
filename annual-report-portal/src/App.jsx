@@ -10,13 +10,6 @@ import StudentLife from "./pages/StudentLife";
 import Login from "./components/Login";
 import About from "./components/About";
 import Signup from "./components/Signup";
-
-import Home from "./components/Work";
-import SuperAdminInfo from "./components/Role-based-signup-details/SuperAdminInfo";
-import StudentInfo from "./components/Role-based-signup-details/StudentInfo";
-import FacultyInfo from "./components/Role-based-signup-details/FacultyInfo";
-import AdminInfo from "./components/Role-based-signup-details/AdminInfo";
-
 import SuperAdminUpload from "./components/Super";
 import Work from "./components/Work";
 import Sidebar from "./components/report/Sidebar";
@@ -40,7 +33,6 @@ const kpiData = [
   { title: "Students Placed", value: "85%" },
 ];
 
-
 const App = () => {
   return (
     <Router>
@@ -56,26 +48,13 @@ const App = () => {
             <Route path="/student-life" element={<StudentLife />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-
-            <Route path="/super-admin-info" element={<SuperAdminInfo />} />
-            <Route path="/admin-info" element={<AdminInfo />} />
-            <Route path="/student-info" element={<StudentInfo />} />
-            <Route path="/faculty-info" element={<FacultyInfo />} />
-
             <Route path="/super" element={<SuperAdminUpload />} />
-
             <Route path="/work" element={<Work />} />
             <Route path="/dashboard-view" element={<DashboardView />} />
             <Route path="/adminpage" element={<AdminPage />} />
             <Route path="/studentpage" element={<StudentPage />} />
           </Routes>
         </main>
-
-
-          </Routes>
-        </main>
-        {/* <Home/> */}
-        <Work/>
         <Footer />
       </div>
     </Router>
@@ -170,6 +149,11 @@ const DashboardView = () => {
     </div>
   );
 };
+
+export default App;
+
+
+
 
 export default App;
 
