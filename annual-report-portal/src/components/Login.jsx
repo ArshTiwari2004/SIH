@@ -31,12 +31,13 @@ const Login = () => {
       setError('');
     }
     try {
-      const { email, password } = formData;
+      const { email, password,role } = formData;
       const { data } = await axios.post(
         "/api/v1/login",
         {
             email,
             password,
+            role
         },
         {
             headers: {
@@ -47,7 +48,7 @@ const Login = () => {
     )
     toast.success("Login Successful ! ");
     localStorage.setItem('token',data.token);
-    navigate("/reports")
+    navigate("/super")
     } catch (error) {
       console.log(error);
       toast.error(error.message)
@@ -95,9 +96,10 @@ const Login = () => {
               required
             >
               <option value="">Please select user role ( if updated select new one )</option>
-              <option value="student">Super-Admin</option>
-              <option value="faculty">Admin</option>
-              <option value="admin">Student</option>
+              <option value="Super-Admin">Super-Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Faculty">Faculty</option>
+              <option value="Student">Student</option>
             </select>
           </div>
           <button
@@ -126,4 +128,3 @@ const Login = () => {
 };
 
 export default Login;
-

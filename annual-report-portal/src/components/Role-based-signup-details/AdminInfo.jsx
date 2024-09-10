@@ -63,7 +63,7 @@ const AdminInfo = () => {
         withCredentials: true,
       });
       toast.success('Admin Registration Completed!');
-      navigate('/dashboard');
+      navigate('/adminpage');
     } catch (error) {
       console.log(error);
       toast.error('Registration failed!');

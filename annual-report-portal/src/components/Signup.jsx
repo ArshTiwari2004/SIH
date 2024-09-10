@@ -10,14 +10,11 @@ const Signup = () => {
     role: ''
   });
   const [error, setError] = useState('');
-
-  const navigate = useNavigate();
-
   const [success, setSuccess] = useState('');
 
   
 
-
+  const navigate = useNavigate(); // To handle navigation
 
 
   const handleChange = (e) => {
@@ -27,34 +24,10 @@ const Signup = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const { email, password, role } = formData;
-
-    if (!role) {
+    if (!formData.role) {
       setError('Please select a user role.');
-
-      return;
-    }
-
-    // Example validation logic for email and password
-    if (email === 'admin@example.com' && password === 'password123') {
-      switch (role) {
-        case 'superadmin':
-          navigate('/super'); // Redirect to Super.jsx
-          break;
-        case 'admin':
-          navigate('/adminpage'); // Redirect to Adminpage.jsx
-          break;
-        case 'student':
-          navigate('/studentpage'); // Redirect to Studentpage.jsx
-          break;
-        default:
-          setError('Invalid role selected.');
-          break;
-      }
-    setError('Invalid email or password.');
-
-    setSuccess('');
-  } else {
+      setSuccess('');
+    } else {
 
       try {
         const { email, password,role } = formData;
@@ -94,7 +67,6 @@ const Signup = () => {
 
       // Random check for email and password validation (will replace this with actual authentication logic)
       
-
     }
   };
 
@@ -103,6 +75,7 @@ const Signup = () => {
       <div className="w-full md:w-1/2 max-w-lg p-8 bg-white shadow-md rounded-md">
         <h2 className="text-2xl text-center font-bold mb-4">Sign Up</h2>
         {error && <p className="text-red-500">{error}</p>}
+        {success && <p className="text-green-500">{success}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Email</label>
@@ -138,16 +111,10 @@ const Signup = () => {
               required
             >
               <option value="">Please select user role</option>
-
-              <option value="superadmin">Super-Admin</option>
-              <option value="admin">Admin</option>
-              <option value="student">Student</option>
-
               <option value="Super-Admin">Super-Admin</option>
               <option value="Admin">Admin</option>
               <option value="Student">Student</option>
               <option value="Faculty">Faculty</option>
-
             </select>
           </div>
           <button
@@ -171,9 +138,9 @@ const Signup = () => {
           className="w-full h-auto"
         />
       </div>
+
     </div>
   );
 };
 
 export default Signup;
-
