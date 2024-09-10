@@ -52,7 +52,7 @@ const SuperAdminInfo = () => {
         withCredentials: true,
       });
       toast.success(`Registration Completed ! `);
-      navigate('/reports')
+      navigate('/super')
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong!");

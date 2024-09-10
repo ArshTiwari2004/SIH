@@ -66,7 +66,7 @@ const StudentInfo = () => {
         withCredentials: true,
       });
       toast.success(`Registration Completed!`);
-      navigate('/dashboard');
+      navigate('/studentpage');
     } catch (error) {
       console.error(error);
       toast.error('Something went wrong!');
