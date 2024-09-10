@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+
+import { Bar } from 'react-chartjs-2';
+
 import '../utils/chartConfig';
 
 const Dashboard = () => {
@@ -48,8 +52,7 @@ const Dashboard = () => {
         <img 
           src="/reportgif.gif" 
           alt="Report GIF" 
-          className="w-full h-auto max-w-xl" // Increased GIF size
-        />
+          className="w-full h-auto max-w-xl" /> 
       </div>
     </div>
   );

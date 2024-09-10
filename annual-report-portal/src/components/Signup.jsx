@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,19 +10,28 @@ const Signup = () => {
     role: ''
   });
   const [error, setError] = useState('');
+
   const navigate = useNavigate();
+
+  const [success, setSuccess] = useState('');
+
+  
+
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const { email, password, role } = formData;
 
     if (!role) {
       setError('Please select a user role.');
+
       return;
     }
 
@@ -41,8 +51,50 @@ const Signup = () => {
           setError('Invalid role selected.');
           break;
       }
-    } else {
-      setError('Invalid email or password.');
+    setError('Invalid email or password.');
+
+    setSuccess('');
+  } else {
+
+      try {
+        const { email, password,role } = formData;
+        const { data } = await axios.post(
+          "/api/v1/register",
+          {
+              email,
+              password,
+              role
+          },
+          {
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              withCredentials: true,
+          }
+      )
+      toast.success(`You Registered as ${role}`);
+      } catch (error) {
+        console.log(error);
+        toast.error("Something went wrong !")
+      }
+
+      console.log('Form Data:', formData);
+      setSuccess('Successfully signed up!');
+      setError('');
+
+      // Redirect based on role
+      if (formData.role === 'Super-Admin') {
+        navigate('/super-admin-info');
+      } else if (formData.role === 'Admin') {
+        navigate('/admin-info');
+      }else if(formData.role === 'Student'){
+        navigate('/student-info');
+      }else if(formData.role === 'Faculty'){navigate("/faculty-info")}
+
+
+      // Random check for email and password validation (will replace this with actual authentication logic)
+      
+
     }
   };
 
@@ -86,9 +138,16 @@ const Signup = () => {
               required
             >
               <option value="">Please select user role</option>
+
               <option value="superadmin">Super-Admin</option>
               <option value="admin">Admin</option>
               <option value="student">Student</option>
+
+              <option value="Super-Admin">Super-Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="Student">Student</option>
+              <option value="Faculty">Faculty</option>
+
             </select>
           </div>
           <button

@@ -12,13 +12,21 @@ import About from "./components/About";
 import Signup from "./components/Signup";
 import SuperAdminUpload from "./components/Super";
 import Work from "./components/Work";
+import Sidebar from "./components/report/Sidebar";
+import Navb from "./components/report/Nav"; 
+import KPISection from "./components/report/KPISection"; 
+import ChartCard from "./components/report/Chartcard"; 
 import AdminPage from "./components/Adminpage";
 import StudentPage from "./components/Studentpage";
 import DashboardView from "./components/Dashboardview";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
+
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+
+
 
 const App = () => {
   return (
@@ -37,7 +45,7 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/super" element={<SuperAdminUpload />} />
             <Route path="/work" element={<Work />} />
-            <Route path="/dashboard-view" element={<DashboardView />} />  {/* Using DashboardView here */}
+            <Route path="/dashboard-view" element={<DashboardView />} />
             <Route path="/adminpage" element={<AdminPage />} />
             <Route path="/studentpage" element={<StudentPage />} />
           </Routes>
