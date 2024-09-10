@@ -66,4 +66,3 @@ const LandingPage = () => {
 };
 
 export default App;
-
