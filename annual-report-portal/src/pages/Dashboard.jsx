@@ -23,7 +23,7 @@ const Dashboard = () => {
         
         {/* Description Text */}
         <p className="text-xl mb-10">
-          Welcome to EduPulse, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.
+          Welcome to Lumina, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.
         </p>
         
         {/* Buttons */}

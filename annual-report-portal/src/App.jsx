@@ -19,7 +19,7 @@ import ChartCard from "./components/report/Chartcard";
 import AdminPage from "./components/Adminpage";
 import StudentPage from "./components/Studentpage";
 import DashboardView from "./components/Dashboardview";
-import WhyEduPulse from "./components/Why";
+import WhyLumina from "./components/Why";
 import IntegrationSystem from "./components/Integration";
 import GetStartedSection from "./components/Last";
 
@@ -88,7 +88,7 @@ const LandingPage = () => {
     <div className="flex flex-col">
       <Dashboard />
       <About />
-      <WhyEduPulse/>
+      <WhyLumina/>
       <IntegrationSystem/>
       <ReviewsCarousel/>
       <FeasibilityAndViability/>

@@ -8,10 +8,10 @@ const BragAboutUs = () => {
         <div className="md:w-1/2 p-8">
           <h2 className="text-4xl font-bold mb-4">Creating a Difference in Education</h2>
           <p className="text-lg mb-6">
-            At EduPulse, we are dedicated to transforming the way educational institutions handle their annual reporting. Our innovative platform not only simplifies the process but also enhances the quality of reports with insightful data analysis and visually appealing presentations.
+            At Lumina, we are dedicated to transforming the way educational institutions handle their annual reporting. Our innovative platform not only simplifies the process but also enhances the quality of reports with insightful data analysis and visually appealing presentations.
           </p>
           <p className="text-lg mb-6">
-            Our commitment to excellence and customer satisfaction drives us to continuously improve and adapt our solutions to meet the evolving needs of our users. Join the revolution in educational reporting and experience the difference with EduPulse.
+            Our commitment to excellence and customer satisfaction drives us to continuously improve and adapt our solutions to meet the evolving needs of our users. Join the revolution in educational reporting and experience the difference with Lumina.
           </p>
           <div className="flex justify-center space-x-6 mt-6">
             <div className="flex flex-col items-center">
@@ -32,7 +32,7 @@ const BragAboutUs = () => {
           </div>
         </div>
         <div className="md:w-1/2 p-8">
-          <img src="rep.png" alt="EduPulse" className="mx-auto" />
+          <img src="rep.png" alt="Lumina" className="mx-auto" />
         </div>
       </div>
     </div>
