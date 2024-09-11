@@ -12,7 +12,7 @@ const Dashboard = () => {
       {/* Left side content */}
       <div className="lg:w-1/2 text-left">
         {/* All-in-one red background text */}
-        <div className="bg-red-600 text-white text-sm py-2 px-4 inline-block rounded mb-2">
+        <div className="bg-cyan-400 text-white text-sm py-2 px-4 inline-block rounded mb-2">
           All-in-one
         </div>
         
@@ -23,7 +23,7 @@ const Dashboard = () => {
         
         {/* Description Text */}
         <p className="text-xl mb-10">
-          Welcome to InsightEDU, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.
+          Welcome to EduPulse, where we transform your institute's achievements into a powerful, data-driven annual report. Simplify, analyze, and visualize the academic journey like never before.
         </p>
         
         {/* Buttons */}
@@ -31,7 +31,7 @@ const Dashboard = () => {
           {/* Get Started Button */}
           <Link 
             to="/signup" 
-            className="bg-red-600 text-white py-3 px-6 rounded inline-block text-lg"
+            className="bg-cyan-400 text-white py-3 px-6 rounded inline-block text-lg"
           >
             Get Started &gt;
           </Link>
@@ -39,7 +39,7 @@ const Dashboard = () => {
           {/* Pricing and Plans Button */}
           <Link 
             to="/pricing" 
-            className="bg-red-600 text-white py-3 px-6 rounded inline-block text-lg"
+            className="bg-cyan-400 text-white py-3 px-6 rounded inline-block text-lg"
           >
             Pricing and Plans
           </Link>

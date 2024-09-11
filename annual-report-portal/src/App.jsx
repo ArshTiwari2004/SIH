@@ -19,12 +19,27 @@ import ChartCard from "./components/report/Chartcard";
 import AdminPage from "./components/Adminpage";
 import StudentPage from "./components/Studentpage";
 import DashboardView from "./components/Dashboardview";
+import WhyEduPulse from "./components/Why";
+import IntegrationSystem from "./components/Integration";
+import GetStartedSection from "./components/Last";
+
+import ProcessingPage from "./components/Processing";
+
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+import ReviewsCarousel from "./components/Use";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import FeasibilityAndViability from "./components/Fandv";
+import BragAboutUs from "./components/Brag";
+
 import AdminInfo from "./components/Role-based-signup-details/AdminInfo";
 import StudentInfo from "./components/Role-based-signup-details/StudentInfo";
 import FacultyInfo from "./components/Role-based-signup-details/FacultyInfo";
 import SuperAdminInfo from "./components/Role-based-signup-details/SuperAdminInfo";
+
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -52,10 +67,14 @@ const App = () => {
             <Route path="/dashboard-view" element={<DashboardView />} />
             <Route path="/adminpage" element={<AdminPage />} />
             <Route path="/studentpage" element={<StudentPage />} />
+
+            <Route path="/processing" element={<ProcessingPage />} />
+
             <Route path="/super-admin-info" element={<SuperAdminInfo />} />
             <Route path="/admin-info" element={<AdminInfo />} />
             <Route path="/student-info" element={<StudentInfo />} />
             <Route path="/faculty-info" element={<FacultyInfo />} />
+
           </Routes>
         </main>
         <Footer />
@@ -69,6 +88,12 @@ const LandingPage = () => {
     <div className="flex flex-col">
       <Dashboard />
       <About />
+      <WhyEduPulse/>
+      <IntegrationSystem/>
+      <ReviewsCarousel/>
+      <FeasibilityAndViability/>
+      <BragAboutUs/>
+      <GetStartedSection/>
     </div>
   );
 };
