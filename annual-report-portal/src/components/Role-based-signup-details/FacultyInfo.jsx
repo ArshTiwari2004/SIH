@@ -55,7 +55,7 @@ const FacultyInfo = () => {
         withCredentials: true,
       });
       toast.success('Faculty Registration Completed!');
-      navigate('/reports');
+      navigate('/adminpage');
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong!');
