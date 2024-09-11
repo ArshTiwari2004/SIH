@@ -6,13 +6,13 @@ const About = () => {
   return (
     <div className="py-16 text-center">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-6">About EduPulse</h2>
+        <h2 className="text-4xl font-bold mb-6">About Lumina</h2>
         <TypingEffect
           text={['Turning Data into a Story of Success', 'Redefining Annual Reporting for Educational Excellence']}
           className="text-2xl font-semibold text-black-200"
         />
         <p className="mt-6 text-lg text-black-200 max-w-2xl mx-auto">
-          EduPulse is a cutting-edge platform designed to streamline the process of preparing comprehensive annual reports for educational institutes. By integrating data from all departments, we help you transform raw information into visually compelling narratives.
+          Lumina is a cutting-edge platform designed to streamline the process of preparing comprehensive annual reports for educational institutes. By integrating data from all departments, we help you transform raw information into visually compelling narratives.
         </p>
 
         {/* Feature Boxes */}

@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         {/* About Us Section */}
         <div>
-          <h3 className="text-2xl font-semibold mb-4">About EduPulse</h3>
+          <h3 className="text-2xl font-semibold mb-4">About Lumina</h3>
           <p className="text-gray-400 mb-4">
-            EduPulse provides a comprehensive platform to help educational institutes create visually compelling, data-driven annual reports with ease.
+            Lumina provides a comprehensive platform to help educational institutes create visually compelling, data-driven annual reports with ease.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center mb-2">
               <FaEnvelope className="text-blue-500 mr-3" />
-              <span className="text-gray-400">support@edupulse.com</span>
+              <span className="text-gray-400">support@Lumina.com</span>
             </li>
           </ul>
         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
 
       {/* Social Media Section */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-        <p className="text-gray-500 mb-4 md:mb-0">&copy; 2024 EduPulse. All Rights Reserved.</p>
+        <p className="text-gray-500 mb-4 md:mb-0">&copy; 2024 Lumina. All Rights Reserved.</p>
         <div className="flex space-x-4">
           <a href="https://facebook.com" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
           <a href="https://twitter.com" className="text-gray-400 hover:text-white"><FaTwitter /></a>

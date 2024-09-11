@@ -1,18 +1,18 @@
 import React from 'react';
 
-const WhyEduPulse = () => {
+const WhyLumina = () => {
   return (
     <div className="py-20 ">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         
         {/* Left side: Detailed and appealing UI */}
         <div className="md:w-2/3 p-8 bg-white ">
-          <h2 className="text-4xl text-center font-bold text-cyan-400 mb-6">Why Use EduPulse?</h2>
+          <h2 className="text-4xl text-center font-bold text-cyan-400 mb-6">Why Use Lumina?</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            EduPulse is revolutionizing the way educational institutions handle their reporting process by transforming data into insightful and interactive dashboards. Our platform not only integrates seamlessly with existing systems but also allows educational institutions to visualize academic, financial, and extracurricular data in ways that drive decision-making and growth.
+            Lumina is revolutionizing the way educational institutions handle their reporting process by transforming data into insightful and interactive dashboards. Our platform not only integrates seamlessly with existing systems but also allows educational institutions to visualize academic, financial, and extracurricular data in ways that drive decision-making and growth.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            By utilizing cutting-edge security measures and AI-powered data processing, EduPulse ensures accuracy, compliance, and collaboration. Whether it's streamlining annual report creation or empowering stakeholders with actionable insights, EduPulse provides an intuitive, user-friendly experience designed to elevate educational reporting to new heights. With our automated system, departments can focus less on manual work and more on strategic improvements.
+            By utilizing cutting-edge security measures and AI-powered data processing, Lumina ensures accuracy, compliance, and collaboration. Whether it's streamlining annual report creation or empowering stakeholders with actionable insights, Lumina provides an intuitive, user-friendly experience designed to elevate educational reporting to new heights. With our automated system, departments can focus less on manual work and more on strategic improvements.
           </p>
 
           {/* Features Highlight */}
@@ -51,4 +51,4 @@ const WhyEduPulse = () => {
   );
 };
 
-export default WhyEduPulse;
+export default WhyLumina;
