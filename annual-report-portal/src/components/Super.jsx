@@ -53,6 +53,11 @@ const SuperAdminUpload = () => {
     navigate('/dashboard-view'); // Navigate to the new route that displays all components
   };
 
+  const handleSubmitFiles = () => {
+    // Redirect to the ProcessingPage after the files have been uploaded
+    navigate('/processing'); 
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white shadow-md rounded-lg p-6">
@@ -86,11 +91,20 @@ const SuperAdminUpload = () => {
           >
             {loading ? 'Uploading...' : 'Upload Files'}
           </button>
+
           <button
             className="px-4 py-2 rounded-md text-center text-white bg-green-500 hover:bg-green-600"
             onClick={handleViewDashboard}
           >
             View Dashboard
+          </button>
+
+          {/* Submit Files button which redirects to the Processing Page */}
+          <button
+            className="px-4 py-2 rounded-md text-center text-white bg-purple-500 hover:bg-purple-600"
+            onClick={handleSubmitFiles}
+          >
+            Submit Files
           </button>
         </div>
       </div>
@@ -99,3 +113,4 @@ const SuperAdminUpload = () => {
 };
 
 export default SuperAdminUpload;
+
