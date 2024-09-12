@@ -22,6 +22,7 @@ import DashboardView from "./components/Dashboardview";
 import WhyLumina from "./components/Why";
 import IntegrationSystem from "./components/Integration";
 import GetStartedSection from "./components/Last";
+import PDF from "./components/Pdf";
 
 import ProcessingPage from "./components/Processing";
 
@@ -39,7 +40,6 @@ import AdminInfo from "./components/Role-based-signup-details/AdminInfo";
 import StudentInfo from "./components/Role-based-signup-details/StudentInfo";
 import FacultyInfo from "./components/Role-based-signup-details/FacultyInfo";
 import SuperAdminInfo from "./components/Role-based-signup-details/SuperAdminInfo";
-
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -72,6 +72,11 @@ const App = () => {
             <Route path="/admin-info" element={<AdminInfo />} />
             <Route path="/student-info" element={<StudentInfo />} />
             <Route path="/faculty-info" element={<FacultyInfo />} />
+
+
+            <Route path = "/pdf" element = {<PDF/>}/>
+
+
           </Routes>
         </main>
         <Footer />
