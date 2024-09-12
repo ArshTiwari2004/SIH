@@ -67,14 +67,15 @@ const App = () => {
             <Route path="/dashboard-view" element={<DashboardView />} />
             <Route path="/adminpage" element={<AdminPage />} />
             <Route path="/studentpage" element={<StudentPage />} />
-
             <Route path="/processing" element={<ProcessingPage />} />
-
             <Route path="/super-admin-info" element={<SuperAdminInfo />} />
             <Route path="/admin-info" element={<AdminInfo />} />
             <Route path="/student-info" element={<StudentInfo />} />
             <Route path="/faculty-info" element={<FacultyInfo />} />
+
+
             <Route path = "/pdf" element = {<PDF/>}/>
+
 
           </Routes>
         </main>
