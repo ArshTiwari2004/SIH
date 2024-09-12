@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  
+
 
   const navigate = useNavigate(); // To handle navigation
 
@@ -22,30 +22,39 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validate email format
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
     if (!formData.role) {
       setError('Please select a user role.');
       setSuccess('');
     } else {
 
       try {
-        const { email, password,role } = formData;
+        const { email, password, role } = formData;
         const { data } = await axios.post(
           "/api/v1/register",
           {
-              email,
-              password,
-              role
+            email,
+            password,
+            role
           },
           {
-              headers: {
-                  "Content-Type": "application/json",
-              },
-              withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
           }
-      )
-      toast.success(`You Registered as ${role}`);
+        )
+        toast.success(`You Registered as ${role}`);
       } catch (error) {
         console.log(error);
         toast.error("Something went wrong !")
@@ -60,13 +69,13 @@ const Signup = () => {
         navigate('/super-admin-info');
       } else if (formData.role === 'Admin') {
         navigate('/admin-info');
-      }else if(formData.role === 'Student'){
+      } else if (formData.role === 'Student') {
         navigate('/student-info');
-      }else if(formData.role === 'Faculty'){navigate("/faculty-info")}
+      } else if (formData.role === 'Faculty') { navigate("/faculty-info") }
 
 
       // Random check for email and password validation (will replace this with actual authentication logic)
-      
+
     }
   };
 
