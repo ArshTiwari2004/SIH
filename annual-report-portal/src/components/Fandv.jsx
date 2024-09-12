@@ -3,7 +3,7 @@ import { FaShieldAlt, FaUsers, FaServer, FaCog ,FaExpand,FaTools } from 'react-i
 
 const FeasibilityAndViability = () => {
   return (
-    <div className="bg-white py-16 text-center">
+    <div className="bg-white py-16 text-center" id='feasability'  >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl  font-semibold mb-12">Feasibility and Viability of our Software </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

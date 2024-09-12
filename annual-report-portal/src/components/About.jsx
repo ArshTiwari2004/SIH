@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="py-16 text-center">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-6">About Lumina</h2>
+        <h2 className="text-4xl font-bold mb-6" id="about-section">About Lumina</h2>
         <TypingEffect
           text={['Turning Data into a Story of Success', 'Redefining Annual Reporting for Educational Excellence']}
           className="text-2xl font-semibold text-black-200"

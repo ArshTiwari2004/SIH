@@ -11,7 +11,7 @@ const IntegrationSystem = () => {
   ]);
 
   return (
-    <div className="py-16 ">
+    <div className="py-16 " id='integrations'>
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-semibold mb-12">Various Integration Options to Enhance Institution's Productivity</h2>
 
