@@ -1,10 +1,9 @@
-// src/pages/DashboardView.jsx
-
 import React from "react";
 import Sidebar from "../components/report/Sidebar";
 import Navb from "../components/report/Nav";
 import KPISection from "../components/report/KPISection";
 import ChartCard from "../components/report/Chartcard";
+import { useNavigate } from "react-router-dom"; // For navigation to PDF page
 
 // Dummy KPI Data
 const kpiData = [
@@ -15,12 +14,18 @@ const kpiData = [
 ];
 
 const DashboardView = () => {
+  const navigate = useNavigate();
+
+  const handleGeneratePDF = () => {
+    navigate("/pdf"); // Redirect to pdf.jsx when the button is clicked
+  };
+
   return (
     <div className="flex">
       <Sidebar />
       <div className="flex flex-col flex-grow">
         <Navb />
-        <main className="flex-grow p-6">
+        <main className="flex-grow p-6" style={{ marginTop: '-20px' }}> {/* Adjust margin to shift page upwards */}
           <KPISection kpis={kpiData} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
@@ -83,6 +88,13 @@ const DashboardView = () => {
               </div>
             </div>
           </div>
+          {/* Generate PDF Button */}
+          <button
+            className="bg-red-500 text-center flex iten-center justify center text-white px-4 py-2 rounded mt-6"
+            onClick={handleGeneratePDF}
+          >
+            Generate PDF
+          </button>
         </main>
       </div>
     </div>

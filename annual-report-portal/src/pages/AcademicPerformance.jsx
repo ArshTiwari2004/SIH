@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Line, Bar, Pie, Radar, Scatter } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
-import ChartCard from "../components/report/Chartcard";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { Box, Typography, Card, CardContent, Divider } from '@mui/material';  
+import { FaTachometerAlt, FaChartLine } from 'react-icons/fa';
 
-
+// Generate Simulated Data
 const generateSimulatedData = () => {
   return {
     passRatesByDepartment: {
-      labels: ['Math', 'Science', 'History', 'English'], // Ensure labels are set
-      values: [85, 90, 78, 88], // Ensure values are set
+      labels: ['Math', 'Science', 'History', 'English'],
+      values: [85, 90, 78, 88],
     },
     studentEnrollment: {
       labels: ['2020', '2021', '2022', '2023'],
@@ -58,11 +61,9 @@ const generateSimulatedData = () => {
   };
 };
 
-
-
+// Generate Chart Data
 const generateChartData = (chartType, data) => {
   if (!data) {
-    // Fallback for undefined or empty data
     return {
       labels: [],
       datasets: [{
@@ -74,11 +75,11 @@ const generateChartData = (chartType, data) => {
       }]
     };
   }
-  
+
   switch (chartType) {
     case 'line':
       return {
-        labels: data.labels || [], 
+        labels: data.labels || [],
         datasets: [{
           label: 'Performance Data',
           data: data.values || [],
@@ -133,32 +134,58 @@ const generateChartData = (chartType, data) => {
   }
 };
 
-
 function AcademicPerformance() {
-  const [data, setData] = useState(generateSimulatedData());
+  const [data] = useState(generateSimulatedData());
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-4">Academic Performance</h1>
+      <h1 className="text-2xl font-semibold mb-4">Report of Academic Performance</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <ChartCard title="Pass Rates by Department">
+        <Card className="p-4">
+          <Typography variant="h6">Pass Rates by Department</Typography>
+          <Divider />
           <Line data={generateChartData('line', data.passRatesByDepartment)} options={{ responsive: true }} />
-        </ChartCard>
-        <ChartCard title="Student Enrollment">
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Student Enrollment</Typography>
+          <Divider />
           <Bar data={generateChartData('bar', data.studentEnrollment)} options={{ responsive: true, indexAxis: 'x' }} />
-        </ChartCard>
-        <ChartCard title="Faculty Achievements">
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Faculty Achievements</Typography>
+          <Divider />
           <Pie data={generateChartData('pie', data.facultyAchievements)} options={{ responsive: true }} />
-        </ChartCard>
-        <ChartCard title="Student Performance">
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Student Performance</Typography>
+          <Divider />
           <Radar data={generateChartData('radar', data.studentPerformance)} options={{ responsive: true }} />
-        </ChartCard>
-        <ChartCard title="Department Comparison">
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Department Comparison</Typography>
+          <Divider />
           <Bar data={generateChartData('bar', data.departmentComparison)} options={{ responsive: true, indexAxis: 'x' }} />
-        </ChartCard>
-        <ChartCard title="Student Performance (Scatter)">
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Student Performance (Scatter)</Typography>
+          <Divider />
           <Scatter data={generateChartData('scatter', data.studentPerformanceScatter)} options={{ responsive: true }} />
-        </ChartCard>
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Progress</Typography>
+          <Divider />
+          <CircularProgressbar value={75} text={`${75}%`} />
+          <Typography variant="body2">Progress toward academic goals</Typography>
+        </Card>
+        <Card className="p-4">
+          <Typography variant="h6">Insights and Conclusions</Typography>
+          <Divider />
+          <Typography variant="body1">
+            <FaTachometerAlt /> Overall, the data shows a positive trend in student performance and enrollment. 
+            <br />
+            <FaChartLine /> Notable achievements in research and awards have contributed to higher faculty satisfaction.
+          </Typography>
+        </Card>
       </div>
     </div>
   );
