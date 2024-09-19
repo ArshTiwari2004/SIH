@@ -1,4 +1,18 @@
-﻿# SIH-24
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+Lumina+,+Your+Annual+Report+Portal;Built+with+React,+Node,+and+AWS!&center=true&color=0066FF&width=500&height=50">
+</p>
+
+<p align="center"><em>A web-based platform built for educational institutions to automate annual report generation using Artificial Intelligence. The system leverages Large Language Models (LLMs) to process and organize unstructured data into structured, actionable insights. We are transforming raw data into interactive, detailed, and customized reports, one click at a time.</em></p>
+
+[![GitHub Issues](https://img.shields.io/github/issues/ArshTiwari2004/SIH)](https://github.com/ArshTiwari2004/SIH/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/yourusername/repositoryname)](https://github.com/yourusername/repositoryname/network)
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/repositoryname)](https://github.com/yourusername/repositoryname/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/ArshTiwari2004/SIH)](https://github.com/ArshTiwari2004/SIH/graphs/contributors)
+[![License](https://img.shields.io/github/license/yourusername/repositoryname)](LICENSE)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yourusername/repositoryname)
+![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/repositoryname)
+
 
 ## Problem Statement (SIH1641)
 
