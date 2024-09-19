@@ -1,44 +1,40 @@
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+Lumina+,+Your+Annual+Report+Portal;Built+with+React,+Node,+and+AWS!&center=true&color=0066FF&width=500&height=50">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+Lumina+,+Your+Annual+Report+Portal;Transforming+data+into+actionable+insights+with+AI-powered+reporting!&center=true&color=0066FF&width=900&height=50">
 </p>
+
 
 <p align="center"><em>A web-based platform built for educational institutions to automate annual report generation using Artificial Intelligence. The system leverages Large Language Models (LLMs) to process and organize unstructured data into structured, actionable insights. We are transforming raw data into interactive, detailed, and customized reports, one click at a time.</em></p>
 
+<div align="center">
+
 [![GitHub Issues](https://img.shields.io/github/issues/ArshTiwari2004/SIH)](https://github.com/ArshTiwari2004/SIH/issues)
-[![GitHub Forks](https://img.shields.io/github/forks/yourusername/repositoryname)](https://github.com/yourusername/repositoryname/network)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/repositoryname)](https://github.com/yourusername/repositoryname/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/ArshTiwari2004/SIH)](https://github.com/ArshTiwari2004/SIH/network)
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/repositoryname)](https://github.com/ArshTiwari2004/SIH/stargazers)
 [![Contributors](https://img.shields.io/github/contributors/ArshTiwari2004/SIH)](https://github.com/ArshTiwari2004/SIH/graphs/contributors)
-[![License](https://img.shields.io/github/license/yourusername/repositoryname)](LICENSE)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yourusername/repositoryname)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/repositoryname)
+[![License](https://img.shields.io/github/license/ArshTiwari2004/SIH)](LICENSE)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ArshTiwari2004/SIH)
+![GitHub last commit](https://img.shields.io/github/last-commit/ArshTiwari2004/SIH)
 
+</div>
+<div align= "center">
 
-## Problem Statement (SIH1641)
+## Problem Statement 
 
-Create an Annual Report Portal for institute where all the departmental reports can be integrated and customized.
+### SIH - 1641
+
+> _Create an Annual Report Portal for institute where all the departmental reports can be integrated and customized._
+
 
 ## Description
 
 Educational institutes generate vast amounts of data each year, including academic performance, research publications, financial statements, infrastructure developments, student and faculty achievements, and extracurricular activities. Preparing a comprehensive and insightful annual report that accurately reflects the institute's accomplishments and growth is a complex and time-consuming task. It requires the aggregation, organization, analysis, and presentation of diverse data sources in a coherent and visually appealing manner. Challenge Design and develop a user-friendly, efficient, and robust portal that streamlines the process of preparing the annual report for an educational institute.The portal should facilitate the collection, integration, analysis, and visualization of data from various departments and stakeholders within the institute. The goal is to create a dynamic, interactive, and automated system that minimizes manual effort, enhances accuracy, and provides valuable insights. Key Features and Requirements User Authentication and Role Management: Secure login for different user roles (administrators, faculty, students, etc.). Role-based access control to ensure data privacy and security. Data Collection and Integration: Import data from various sources (databases, spreadsheets, surveys, etc.). Integration with existing systems (student management systems, financial software, research databases, etc.). Support for manual data entry where necessary. Data Analysis and Visualization: Tools for analyzing academic performance, research output, financial data, and other metrics. Customizable dashboards for visualizing key performance indicators (KPIs). Graphs, charts, and other visual aids for presenting data trends and insights. Report Generation: Automated generation of the annual report in various formats (PDF, HTML, etc.). Customizable templates for different sections of the report. Inclusion of multimedia elements (images, videos, infographics). Collaboration and Feedback: Features for collaborative editing and review of report content. Mechanisms for collecting feedback from stakeholders. Version control to track changes and maintain document integrity. User Experience: Intuitive and user-friendly interface. Responsive design for accessibility on various devices (desktop, tablet, mobile). Multilingual support for institutes with diverse language needs. Compliance and Standards: Adherence to relevant educational and reporting standards. Data security and privacy compliance with regulations (GDPR, FERPA, etc.). Expected Outcomes Participants are expected to deliver a functional prototype of the annual report preparation portal that demonstrates the core features and addresses the outlined requirements. The solution should be scalable, adaptable to different types of educational institutes, and capable of handling large volumes of data.
 
+
+</div>
 <div align="center">
-# Annual Report Portal
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+the+Annual+Report+Portal;Built+with+React,+Node,+and+AWS!&center=true&color=0066FF&width=500&height=50">
-</p>
-
-## Table of Contents
-1. [Tech Stack](#tech-stack)
-2. [Proposed Solution](#proposed-solution)
-3. [Features](#features)
-4. [How to Run](#how-to-run)
-5. [Future Scope](#future-scope)
-
----
-
-## 1. Tech Stack
+##  Tech Stack
 
 ### Front-End
 
@@ -76,42 +72,33 @@ Educational institutes generate vast amounts of data each year, including academ
   <img src="https://img.shields.io/badge/Draw.io-007ACC?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="Draw.io">
 </p>
 
+### Artificial Intelligence
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/Scikit-Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn">
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" alt="Keras">
+  <img src="https://img.shields.io/badge/Ollama%20Open%20Source%20Models-7F6D8C?style=for-the-badge&logo=python&logoColor=white" alt="Ollama Open Source Models">
+  
+### Deployement
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+
+
+
+## Architecture
+
+<p align="center">
+  <img src="https://path-to-your-architecture-diagram.com/architecture.png" alt="Architecture Diagram">
+</p>
+  
+</p>
+
 ---
-
-## 2. Proposed Solution
-
-The platform automates the process of generating detailed and interactive reports from unstructured data for institutions. Users can upload aggregated data in any format, which is processed by AI models (like Ollama's open-source models) and transformed into structured JSON data stored in MongoDB.
-
-Key functionalities include:
-- **Role-Based Access:** Students have read-only access, while HoDs have write access.
-- **Data Upload:** Users upload data in formats like PDF, Excel, etc.
-- **AI-Powered Data Structuring:** Unstructured data is converted into structured JSON.
-- **Interactive Reports:** Data is visualized through charts, graphs, etc., powered by Chart.js.
-- **Integration with Management Software:** Supports importing/exporting from TallyERP, Fedena, and Academia.
-
----
-
-## 3. Features
-
-- **Authentication:** Implemented with JWT, supporting encryption with Bcrypt.
-- **Data Encryption:** All data in MongoDB is encrypted for security.
-- **Interactive Reporting:** Generated reports allow users to drill down into data for detailed insights.
-- **Scalability:** Built with a microservices architecture, ensuring scalability for large institutions.
-- **Role-Based Access Control:** Fine-tuned permissions for different users.
-- **Customizable Reports:** Users can select which information to summarize.
-- **Future Scope:** Integration with additional AI models and blockchain technologies.
-
----
-
-## 4. How to Run
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/annual-report-portal.git
-
-</div>
-
 
 
 ## 2. Features 
