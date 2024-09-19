@@ -93,7 +93,7 @@ Educational institutes generate vast amounts of data each year, including academ
 ## Architecture
 
 <p align="center">
-  <img src="https://path-to-your-architecture-diagram.com/architecture.png" alt="Architecture Diagram">
+  <img src="Architecture.png" alt="Architecture Diagram">
 </p>
   
 </p>
