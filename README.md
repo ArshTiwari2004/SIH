@@ -92,7 +92,7 @@ Educational institutes generate vast amounts of data each year, including academ
 
 ## Architecture
 <p align="center">
-  <img src="Architecture.png" alt="Architecture Diagram" style="border: 2px solid #000; max-width: 80%; height: auto;">
+  <img src="Architecture.png" alt="Architecture Diagram" style="border: 2px solid #000; max-width: 50%; height: auto;">
 </p>
 
   
